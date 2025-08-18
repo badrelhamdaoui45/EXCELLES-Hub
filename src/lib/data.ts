@@ -99,6 +99,12 @@ export const volunteerTasks: VolunteerTask[] = [
     status: 'todo',
   },
   {
+    id: 5,
+    title: 'Apply for Google Ad Grant',
+    description: 'Apply for a Google Ad Grant and send us the update.',
+    status: 'todo',
+  },
+  {
     id: 3,
     title: 'Community Garden Weeding',
     description: 'Spend 2 hours weeding the vegetable beds in the community garden.',
