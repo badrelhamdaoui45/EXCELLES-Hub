@@ -99,22 +99,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="blog" className="py-16 bg-secondary md:py-24">
-        <div className="container px-4 mx-auto">
-          <h2 className="mb-12 text-3xl text-center md:text-4xl font-headline">Latest from Our Blog</h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {latestPosts.map(post => (
-              <BlogPreviewCard key={post.slug} post={post} />
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Button asChild variant="outline">
-              <Link href="/blog">View All Posts</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       <section id="donate-cta" className="py-16 text-white bg-primary md:py-24">
         <div className="container flex flex-col items-center px-4 mx-auto text-center">
           <Heart className="w-16 h-16 mb-4 text-accent" />
