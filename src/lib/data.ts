@@ -17,7 +17,7 @@ export const blogPosts: BlogPost[] = [
     title: 'The Colors of Cameroon: Our Annual Youth Art Exhibition',
     excerpt: 'Our annual art exhibition was a vibrant success, showcasing the incredible talent of young Cameroonian artists...',
     content: 'The annual youth art exhibition was a spectacular event, filled with color, creativity, and community spirit. Over 100 pieces of art were displayed, ranging from paintings and sculptures to digital media. The event provided a platform for young artists to showcase their work, gain recognition, and even sell some of their pieces. The proceeds from the event will go towards funding our arts program for the next year.',
-    imageUrl: 'https://placehold.co/800x600.png',
+    imageUrl: 'https://images.unsplash.com/photo-1694286068561-3233c946e9be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjYW1lcm91biUyMGtpZHMlMjByZWFkaW5nfGVufDB8fHx8MTc1NTU1OTAzOHww&ixlib=rb-4.1.0&q=80&w=1080',
     imageHint: 'youth art exhibition',
     author: 'Admin',
     date: 'July 22, 2024',
