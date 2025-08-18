@@ -12,8 +12,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
-import { FileText, LogOut, CheckCircle2, ListTodo, Award } from 'lucide-react';
+import { FileText, LogOut, CheckCircle2, ListTodo, Award, UserCircle, Upload } from 'lucide-react';
 import { volunteerTasks } from '@/lib/data';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const registrationSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -38,6 +39,7 @@ const hardcodedCredentials = {
 export function VolunteerPortal() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loginError, setLoginError] = useState('');
+  const [profileImage, setProfileImage] = useState<string | null>(null);
   const { toast } = useToast();
   
   const tasksToDo = volunteerTasks.filter(task => task.status === 'todo');
@@ -76,16 +78,46 @@ export function VolunteerPortal() {
     loginForm.reset();
   }
 
+  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setProfileImage(reader.result as string);
+        toast({
+          title: 'Photo updated!',
+          description: 'Your new profile picture has been saved.',
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   if (isLoggedIn) {
     return (
       <div className="space-y-8">
         <Card>
-          <CardHeader>
-            <CardTitle className="font-headline text-3xl">Welcome, {hardcodedCredentials.name}!</CardTitle>
-            <CardDescription>Role: {hardcodedCredentials.role}</CardDescription>
+          <CardHeader className="flex flex-row items-center gap-4">
+            <Avatar className="w-20 h-20">
+              <AvatarImage src={profileImage || undefined} alt="Volunteer" />
+              <AvatarFallback>
+                <UserCircle className="w-20 h-20 text-muted-foreground" />
+              </AvatarFallback>
+            </Avatar>
+            <div>
+              <CardTitle className="font-headline text-3xl">Welcome, {hardcodedCredentials.name}!</CardTitle>
+              <CardDescription>Role: {hardcodedCredentials.role}</CardDescription>
+              <Input type="file" id="photo-upload" className="hidden" accept="image/*" onChange={handleImageUpload} />
+              <Button asChild variant="outline" size="sm" className="mt-2">
+                <label htmlFor="photo-upload" className="cursor-pointer">
+                  <Upload className="mr-2 h-4 w-4" />
+                  Upload Photo
+                </label>
+              </Button>
+            </div>
           </CardHeader>
           <CardContent className="space-y-4">
-            <p>Here are some resources for you:</p>
+            <p className="font-semibold">Here are some resources for you:</p>
             <ul className="space-y-2">
               <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Volunteer Handbook</a></li>
               <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Upcoming Events Schedule</a></li>
