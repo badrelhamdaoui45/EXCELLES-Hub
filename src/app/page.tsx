@@ -38,7 +38,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <section className="relative flex items-center justify-center w-full text-center text-white h-[60vh]">
         <Image
-          src="https://placehold.co/1600x900.png"
+          src="https://images.unsplash.com/photo-1671029876878-6e91cfcfe324?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYW1lcm91biUyMGNoaWxkfGVufDB8fHx8MTc1NTU0NTI3MHww&ixlib=rb-4.1.0&q=80&w=1080"
           alt="Children in Cameroon"
           layout="fill"
           objectFit="cover"
