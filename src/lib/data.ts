@@ -1,4 +1,4 @@
-import type { BlogPost, TeamMember, Document } from './types';
+import type { BlogPost, TeamMember, Document, VolunteerTask } from './types';
 
 export const blogPosts: BlogPost[] = [
   {
@@ -84,3 +84,30 @@ export const officialInfo = {
   siret: '123 456 789 00010',
   rna: 'W123456789',
 };
+
+export const volunteerTasks: VolunteerTask[] = [
+  {
+    id: 1,
+    title: 'Translate documents',
+    description: 'Translate 5 pages of the new volunteer handbook from French to English.',
+    status: 'todo',
+  },
+  {
+    id: 2,
+    title: 'Prepare for Art Workshop',
+    description: 'Help organize supplies for the upcoming children\'s art workshop.',
+    status: 'todo',
+  },
+  {
+    id: 3,
+    title: 'Community Garden Weeding',
+    description: 'Spend 2 hours weeding the vegetable beds in the community garden.',
+    status: 'completed',
+  },
+   {
+    id: 4,
+    title: 'Social Media Post',
+    description: 'Create a post for Instagram about the successful art exhibition.',
+    status: 'completed',
+  },
+];

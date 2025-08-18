@@ -12,7 +12,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
-import { FileText, LogOut, UserCircle, Award } from 'lucide-react';
+import { FileText, LogOut, CheckCircle2, ListTodo, Award } from 'lucide-react';
+import { volunteerTasks } from '@/lib/data';
 
 const registrationSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -38,6 +39,9 @@ export function VolunteerPortal() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loginError, setLoginError] = useState('');
   const { toast } = useToast();
+  
+  const tasksToDo = volunteerTasks.filter(task => task.status === 'todo');
+  const completedTasks = volunteerTasks.filter(task => task.status === 'completed');
 
   const registrationForm = useForm<z.infer<typeof registrationSchema>>({
     resolver: zodResolver(registrationSchema),
@@ -74,24 +78,62 @@ export function VolunteerPortal() {
 
   if (isLoggedIn) {
     return (
-      <Card>
-        <CardHeader>
-          <CardTitle className="font-headline text-3xl">Welcome, {hardcodedCredentials.name}!</CardTitle>
-          <CardDescription>Role: {hardcodedCredentials.role}</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p>Here are some resources for you:</p>
-          <ul className="space-y-2">
-            <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Volunteer Handbook</a></li>
-            <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Upcoming Events Schedule</a></li>
-            <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Contact List</a></li>
-            <li><a href="/certificate.pdf" className="flex items-center gap-2 text-primary hover:underline" download><Award size={16} /> Certificate of Registration</a></li>
-          </ul>
-          <Button onClick={onLogout} variant="outline" className="mt-4">
-            <LogOut className="mr-2 h-4 w-4"/> Log Out
-          </Button>
-        </CardContent>
-      </Card>
+      <div className="space-y-8">
+        <Card>
+          <CardHeader>
+            <CardTitle className="font-headline text-3xl">Welcome, {hardcodedCredentials.name}!</CardTitle>
+            <CardDescription>Role: {hardcodedCredentials.role}</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p>Here are some resources for you:</p>
+            <ul className="space-y-2">
+              <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Volunteer Handbook</a></li>
+              <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Upcoming Events Schedule</a></li>
+              <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Contact List</a></li>
+              <li><a href="/certificate.pdf" className="flex items-center gap-2 text-primary hover:underline" download><Award size={16} /> Certificate of Registration</a></li>
+            </ul>
+            <Button onClick={onLogout} variant="outline" className="mt-4">
+              <LogOut className="mr-2 h-4 w-4"/> Log Out
+            </Button>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-3 font-headline"><ListTodo className="text-accent"/>Tasks to Do</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {tasksToDo.length > 0 ? (
+              tasksToDo.map(task => (
+                <div key={task.id} className="p-3 rounded-md bg-background">
+                  <h4 className="font-semibold">{task.title}</h4>
+                  <p className="text-sm text-muted-foreground">{task.description}</p>
+                </div>
+              ))
+            ) : (
+              <p className="text-muted-foreground">No pending tasks. Great job!</p>
+            )}
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-3 font-headline"><CheckCircle2 className="text-primary"/>Completed Tasks</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {completedTasks.length > 0 ? (
+              completedTasks.map(task => (
+                <div key={task.id} className="p-3 rounded-md bg-background">
+                  <h4 className="font-semibold">{task.title}</h4>
+                  <p className="text-sm text-muted-foreground">{task.description}</p>
+                </div>
+              ))
+            ) : (
+              <p className="text-muted-foreground">No tasks completed yet.</p>
+            )}
+          </CardContent>
+        </Card>
+      </div>
     );
   }
 

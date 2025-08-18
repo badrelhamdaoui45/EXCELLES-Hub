@@ -28,3 +28,10 @@ export type Document = {
   url: string;
   type: 'public' | 'private';
 };
+
+export type VolunteerTask = {
+  id: number;
+  title: string;
+  description: string;
+  status: 'todo' | 'completed';
+};
