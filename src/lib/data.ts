@@ -72,7 +72,7 @@ export const teamMembers: TeamMember[] = [
 ];
 
 export const documents: Document[] = [
-  { name: 'Annual Report 2023', url: '#', type: 'public' },
+  { name: 'Annual Report 2024', url: '/rapport_annuel_excelles_kids.pdf', type: 'public' },
   { name: 'Our Mission Statement', url: '#', type: 'public' },
   { name: 'Volunteer Handbook', url: '#', type: 'private' },
   { name: 'Financial Statements 2023', url: '#', type: 'private' },
