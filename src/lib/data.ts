@@ -6,7 +6,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Harvesting Hope: A Season of Growth in Our Community Garden',
     excerpt: 'Discover how our latest agricultural project is empowering local families and providing fresh, nutritious food...',
     content: 'The community garden has been a beacon of hope this season. With the help of our dedicated volunteers, we have cultivated over 500 kilograms of fresh vegetables, which have been distributed to families in need. This project not only addresses food insecurity but also teaches valuable skills in sustainable agriculture to our youth participants. We have seen a remarkable transformation in the community, with more people getting involved and taking pride in their local food source.',
-    imageUrl: 'https://placehold.co/800x600.png',
+    imageUrl: 'https://images.unsplash.com/photo-1610500796385-3ffc1ae2f046?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjYWVtcm91biUyMGtpZHMlMjByZWFkaW5nfGVufDB8fHx8MTc1NTU1OTAxMnww&ixlib=rb-4.1.0&q=80&w=1080',
     imageHint: 'community garden harvest',
     author: 'Admin',
     date: 'August 15, 2024',
