@@ -5,7 +5,7 @@ import type { Document } from '@/lib/types';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { FileText, Lock, Unlock } from 'lucide-react';
+import { FileText, Lock, Unlock, Download } from 'lucide-react';
 
 const correctPassword = 'Bad202?!@';
 
@@ -35,11 +35,18 @@ export function DocumentLibrary({ publicDocs, privateDocs }: { publicDocs: Docum
           <CardDescription>These documents are available for everyone to view and download.</CardDescription>
         </CardHeader>
         <CardContent>
-          <ul className="space-y-2">
+          <ul className="space-y-3">
             {publicDocs.map((doc) => (
               <li key={doc.name}>
-                <a href={doc.url} className="flex items-center gap-2 text-primary hover:underline" target="_blank" rel="noopener noreferrer">
-                  {doc.name}
+                <a 
+                  href={doc.url} 
+                  className="flex items-center justify-between gap-4 p-2 transition-colors rounded-md hover:bg-muted"
+                  download
+                >
+                  <span className='flex items-center gap-2 text-primary hover:underline'>
+                    {doc.name}
+                  </span>
+                  <Download className="w-5 h-5 text-muted-foreground" />
                 </a>
               </li>
             ))}
