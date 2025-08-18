@@ -1,6 +1,5 @@
 import { blogPosts } from '@/lib/data';
 import { BlogList } from './_components/blog-list';
-import { AiBlogIdeaGenerator } from './_components/ai-blog-idea-generator';
 
 export default function BlogPage() {
   return (
@@ -14,12 +13,6 @@ export default function BlogPage() {
             </p>
           </div>
           <BlogList posts={blogPosts} />
-        </div>
-      </section>
-      
-      <section className="py-16 bg-secondary md:py-24">
-        <div className="container px-4 mx-auto">
-          <AiBlogIdeaGenerator />
         </div>
       </section>
     </div>
