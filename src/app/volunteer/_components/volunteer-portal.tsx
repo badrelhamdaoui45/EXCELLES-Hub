@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -11,7 +12,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
-import { FileText, LogOut, UserCircle } from 'lucide-react';
+import { FileText, LogOut, UserCircle, Award } from 'lucide-react';
 
 const registrationSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -84,6 +85,7 @@ export function VolunteerPortal() {
             <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Volunteer Handbook</a></li>
             <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Upcoming Events Schedule</a></li>
             <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Contact List</a></li>
+            <li><a href="/certificate.pdf" className="flex items-center gap-2 text-primary hover:underline" download><Award size={16} /> Certificate of Registration</a></li>
           </ul>
           <Button onClick={onLogout} variant="outline" className="mt-4">
             <LogOut className="mr-2 h-4 w-4"/> Log Out
