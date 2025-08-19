@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, ExternalLink } from 'lucide-react';
 import { Logo } from '../logo';
 import { officialInfo } from '@/lib/data';
 
@@ -52,7 +52,10 @@ export function Footer() {
               <p>SIREN: {officialInfo.siren}</p>
               <p>SIRET: {officialInfo.siret}</p>
               <p>RNA: {officialInfo.rna}</p>
-              <p className="mt-2 text-xs">(View on official directory)</p>
+              <p className="flex items-center gap-1 mt-2 text-xs">
+                <ExternalLink className="w-3 h-3" />
+                (View on official directory)
+              </p>
             </div>
           </Link>
         </div>
