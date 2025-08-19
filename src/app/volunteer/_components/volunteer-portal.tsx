@@ -30,7 +30,7 @@ const loginSchema = z.object({
 });
 
 const hardcodedCredentials = {
-  email: 'contact@execelles.com',
+  email: 'alexgirardot820@gmail.com',
   password: 'Bad202?!@',
   name: 'Alex Girardot',
   role: 'Community Ambassador'
