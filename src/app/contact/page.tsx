@@ -27,8 +27,8 @@ export default function ContactPage() {
                   Our Office
                 </h3>
                 <address className="mt-2 not-italic text-muted-foreground">
-                  123 Hope Street<br />
-                  Yaoundé, Cameroon
+                  100 RUE LAURISTON<br />
+                  75116 PARIS, FRANCE
                 </address>
               </div>
               <div>
@@ -52,7 +52,7 @@ export default function ContactPage() {
                   width={600}
                   height={400}
                   className="w-full"
-                  data-ai-hint="map cameroon"
+                  data-ai-hint="map france"
                 />
               </div>
             </div>

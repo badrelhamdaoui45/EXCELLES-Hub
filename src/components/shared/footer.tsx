@@ -33,8 +33,8 @@ export function Footer() {
         <div>
           <h3 className="mb-4 text-sm font-semibold tracking-wider uppercase font-headline">Contact Us</h3>
           <address className="not-italic text-sm text-primary-foreground/80">
-            <p>123 Hope Street, Yaoundé</p>
-            <p>Cameroon</p>
+            <p>100 RUE LAURISTON, 75116 PARIS</p>
+            <p>FRANCE</p>
             <p className="mt-2">Email: contact@execelles.com</p>
             <p>Phone: +237 123 456 789</p>
           </address>
