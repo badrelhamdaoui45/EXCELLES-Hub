@@ -14,6 +14,7 @@ const navLinks: NavLink[] = [
   { href: '/about', label: 'About Us' },
   { href: '/blog', label: 'Blog' },
   { href: '/volunteer', label: 'Volunteer' },
+  { href: '/volunteer-opportunities', label: 'Opportunities' },
   { href: '/contact', label: 'Contact' },
 ];
 

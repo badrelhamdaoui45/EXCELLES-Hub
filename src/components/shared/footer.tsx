@@ -26,6 +26,7 @@ export function Footer() {
             <li><Link href="/about" className="text-sm text-primary-foreground/80 hover:text-white">About Us</Link></li>
             <li><Link href="/blog" className="text-sm text-primary-foreground/80 hover:text-white">Blog</Link></li>
             <li><Link href="/volunteer" className="text-sm text-primary-foreground/80 hover:text-white">Volunteer</Link></li>
+            <li><Link href="/volunteer-opportunities" className="text-sm text-primary-foreground/80 hover:text-white">Volunteer Opportunities</Link></li>
             <li><Link href="/documents" className="text-sm text-primary-foreground/80 hover:text-white">Document Library</Link></li>
           </ul>
         </div>
