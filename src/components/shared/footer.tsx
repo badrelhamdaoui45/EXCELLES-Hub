@@ -35,7 +35,7 @@ export function Footer() {
           <address className="not-italic text-sm text-primary-foreground/80">
             <p>123 Hope Street, Yaoundé</p>
             <p>Cameroon</p>
-            <p className="mt-2">Email: contact@excelles.org</p>
+            <p className="mt-2">Email: contact@execelles.com</p>
             <p>Phone: +237 123 456 789</p>
           </address>
         </div>

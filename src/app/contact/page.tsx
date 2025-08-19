@@ -36,7 +36,7 @@ export default function ContactPage() {
                   <Mail className="w-6 h-6 text-accent" />
                   Email Us
                 </h3>
-                <a href="mailto:contact@excelles.org" className="text-primary hover:underline">contact@excelles.org</a>
+                <a href="mailto:contact@execelles.com" className="text-primary hover:underline">contact@execelles.com</a>
               </div>
               <div>
                 <h3 className="flex items-center gap-3 text-xl font-headline">
