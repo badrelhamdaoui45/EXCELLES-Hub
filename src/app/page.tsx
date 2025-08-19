@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Palette, BookOpen, Leaf, Heart } from 'lucide-react';
+import { Palette, BookOpen, Leaf, Heart, School, Sprout, Paintbrush } from 'lucide-react';
 import { blogPosts } from '@/lib/data';
 import { BlogPost } from '@/lib/types';
 
@@ -98,7 +98,42 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      
+      <section className="py-16 bg-secondary md:py-24">
+        <div className="container px-4 mx-auto">
+          <h2 className="mb-12 text-3xl text-center md:text-4xl font-headline">Our Activities</h2>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+             <Card className="flex flex-col">
+              <CardHeader>
+                <Paintbrush className="w-10 h-10 mb-2 text-primary" />
+                <CardTitle className="font-headline">Art Workshops</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-muted-foreground">Hands-on workshops in painting, sculpture, and traditional crafts for children and teenagers.</p>
+              </CardContent>
+            </Card>
+            <Card className="flex flex-col">
+              <CardHeader>
+                <School className="w-10 h-10 mb-2 text-primary" />
+                <CardTitle className="font-headline">Cultural Education</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-muted-foreground">Programs dedicated to teaching local history, languages, and storytelling to preserve our heritage.</p>
+              </CardContent>
+            </Card>
+            <Card className="flex flex-col">
+              <CardHeader>
+                <Sprout className="w-10 h-10 mb-2 text-primary" />
+                <CardTitle className="font-headline">Community Gardening</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-muted-foreground">Join us in cultivating fresh, organic produce for local families while learning about sustainable farming.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+      
       <section id="donate-cta" className="py-16 text-white bg-primary md:py-24">
         <div className="container flex flex-col items-center px-4 mx-auto text-center">
           <Heart className="w-16 h-16 mb-4 text-accent" />
