@@ -1,5 +1,29 @@
 import type { BlogPost, TeamMember, Document, VolunteerTask } from './types';
 
+export const teamMembers: TeamMember[] = [
+  {
+    name: 'Marc Bescond',
+    role: 'Founder & President',
+    bio: 'With a PhD in Education and a passion for youth development, Dr. Kouassi founded EXCELLES to create lasting change in her home country.',
+    imageUrl: '/as1.jpg',
+    imageHint: 'professional woman smiling',
+  },
+  {
+    name: 'Jean-Pierre Nkomo',
+    role: 'Director of Operations',
+    bio: 'Jean-Pierre manages the day-to-day activities of our programs, ensuring everything runs smoothly and efficiently.',
+    imageUrl: '/as2.jpg',
+    imageHint: 'professional man portrait',
+  },
+  {
+    name: 'Aissatou Diallo',
+    role: 'Head of Cultural Programs',
+    bio: 'Aissatou is a historian and curator dedicated to preserving and celebrating the rich cultural heritage of Cameroon.',
+    imageUrl: '/as3.jpeg',
+    imageHint: 'woman in traditional dress',
+  },
+];
+
 export const blogPosts: BlogPost[] = [
   {
     slug: 'harvesting-hope',
@@ -47,29 +71,7 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
-export const teamMembers: TeamMember[] = [
-  {
-    name: 'Dr. Marie-Claire Kouassi',
-    role: 'Founder & President',
-    bio: 'With a PhD in Education and a passion for youth development, Dr. Kouassi founded EXCELLES to create lasting change in her home country.',
-    imageUrl: '/as1.jpg',
-    imageHint: 'professional woman smiling',
-  },
-  {
-    name: 'Jean-Pierre Nkomo',
-    role: 'Director of Operations',
-    bio: 'Jean-Pierre manages the day-to-day activities of our programs, ensuring everything runs smoothly and efficiently.',
-    imageUrl: '/as2.jpg',
-    imageHint: 'professional man portrait',
-  },
-  {
-    name: 'Aissatou Diallo',
-    role: 'Head of Cultural Programs',
-    bio: 'Aissatou is a historian and curator dedicated to preserving and celebrating the rich cultural heritage of Cameroon.',
-    imageUrl: '/as3.jpeg',
-    imageHint: 'woman in traditional dress',
-  },
-];
+
 
 export const documents: Document[] = [
   { name: 'Annual Report 2024', url: '/rapport_annuel_excelles_kids.pdf', type: 'public' },

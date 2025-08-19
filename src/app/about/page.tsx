@@ -64,15 +64,14 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {teamMembers.map((member) => (
               <Card key={member.name} className="flex flex-col items-center p-6 text-center">
-                <div className="relative w-[150px] h-[150px] rounded-full overflow-hidden">
-                  <Image
-                    src={member.imageUrl}
-                    alt={member.name}
-                    layout="fill"
-                    objectFit="cover"
-                    data-ai-hint={member.imageHint}
-                  />
-                </div>
+                <Image
+                  src={member.imageUrl}
+                  alt={member.name}
+                  width={150}
+                  height={150}
+                  className="object-cover rounded-full"
+                  data-ai-hint={member.imageHint}
+                />
                 <CardHeader className="p-2 pb-0">
                   <CardTitle className="mt-4 font-headline">{member.name}</CardTitle>
                   <p className="font-semibold text-primary">{member.role}</p>
