@@ -74,7 +74,7 @@ export const blogPosts: BlogPost[] = [
 
 
 export const documents: Document[] = [
-  { name: 'Annual Report 2024', url: '/rapport_annuel_excelles_kids.pdf', type: 'public' },
+  { name: 'Annual Report 2024', url: '/Rapport_Annuel_2024_ExcellessSmartKids.pdf', type: 'public' },
   { name: 'Article of association', url: '/Articleofassociation.pdf', type: 'public' },
   { name: 'Volunteer Handbook', url: '#', type: 'private' },
   { name: 'Financial Statements 2023', url: '#', type: 'private' },
