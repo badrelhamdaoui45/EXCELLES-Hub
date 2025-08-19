@@ -8,7 +8,7 @@ import { BlogPost } from '@/lib/types';
 
 const BlogPreviewCard = ({ post }: { post: BlogPost }) => (
   <Card className="overflow-hidden transition-shadow duration-300 hover:shadow-xl">
-    <Link href={`/blog/${post.slug}`} className="block">
+    <Link href={`/blog/${post.slug}`} className="block h-full">
       <Image
         src={post.imageUrl}
         alt={post.title}
@@ -130,6 +130,22 @@ export default function Home() {
                 <p className="text-muted-foreground">Join us in cultivating fresh, organic produce for local families while learning about sustainable farming.</p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="latest-news" className="py-16 bg-background md:py-24">
+        <div className="container px-4 mx-auto">
+          <h2 className="mb-12 text-3xl text-center md:text-4xl font-headline">Latest News</h2>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {latestPosts.map(post => (
+              <BlogPreviewCard key={post.slug} post={post} />
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Button asChild>
+              <Link href="/blog">View All Posts</Link>
+            </Button>
           </div>
         </div>
       </section>
