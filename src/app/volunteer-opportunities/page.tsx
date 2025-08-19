@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Handshake, Megaphone } from 'lucide-react';
+import { Megaphone } from 'lucide-react';
+import { ApplyForm } from './_components/apply-form';
 
 export default function VolunteerOpportunitiesPage() {
   return (
@@ -12,7 +13,7 @@ export default function VolunteerOpportunitiesPage() {
               Join us and contribute your skills to a great cause. We are currently looking for dedicated volunteers to fill the following role.
             </p>
           </div>
-          <div className="max-w-4xl mx-auto mt-12">
+          <div className="grid max-w-6xl gap-12 mx-auto mt-12 md:grid-cols-2">
             <Card>
               <CardHeader>
                  <div className="flex justify-center mb-4">
@@ -51,6 +52,9 @@ export default function VolunteerOpportunitiesPage() {
                 </div>
               </CardContent>
             </Card>
+            <div>
+              <ApplyForm />
+            </div>
           </div>
         </div>
       </section>
