@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -12,7 +12,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
-import { FileText, LogOut, CheckCircle2, ListTodo, Award, UserCircle, Upload } from 'lucide-react';
+import { FileText, LogOut, CheckCircle2, ListTodo, Award, UserCircle, Upload, Wallet, Calendar, DollarSign } from 'lucide-react';
 import { volunteerTasks } from '@/lib/data';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
@@ -40,7 +40,16 @@ export function VolunteerPortal() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loginError, setLoginError] = useState('');
   const [profileImage, setProfileImage] = useState<string | null>(null);
+  const [currentDate, setCurrentDate] = useState('');
   const { toast } = useToast();
+  
+  useEffect(() => {
+    setCurrentDate(new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }));
+  }, []);
   
   const tasksToDo = volunteerTasks.filter(task => task.status === 'todo');
   const completedTasks = volunteerTasks.filter(task => task.status === 'completed');
@@ -96,75 +105,105 @@ export function VolunteerPortal() {
   if (isLoggedIn) {
     return (
       <div className="space-y-8">
-        <Card>
-          <CardHeader className="flex flex-row items-center gap-4">
-            <Avatar className="w-20 h-20">
-              <AvatarImage src={profileImage || undefined} alt="Volunteer" />
-              <AvatarFallback>
-                <UserCircle className="w-20 h-20 text-muted-foreground" />
-              </AvatarFallback>
-            </Avatar>
-            <div>
-              <CardTitle className="font-headline text-3xl">Welcome, {hardcodedCredentials.name}!</CardTitle>
-              <CardDescription>Role: {hardcodedCredentials.role}</CardDescription>
-              <Input type="file" id="photo-upload" className="hidden" accept="image/*" onChange={handleImageUpload} />
-              <Button asChild variant="outline" size="sm" className="mt-2">
-                <label htmlFor="photo-upload" className="cursor-pointer">
-                  <Upload className="mr-2 h-4 w-4" />
-                  Upload Photo
-                </label>
-              </Button>
-            </div>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="font-semibold">Here are some resources for you:</p>
-            <ul className="space-y-2">
-              <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Volunteer Handbook</a></li>
-              <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Upcoming Events Schedule</a></li>
-              <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Contact List</a></li>
-              <li><a href="/certificate.pdf" className="flex items-center gap-2 text-primary hover:underline" download><Award size={16} /> Certificate of Registration</a></li>
-            </ul>
-            <Button onClick={onLogout} variant="outline" className="mt-4">
-              <LogOut className="mr-2 h-4 w-4"/> Log Out
-            </Button>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-3 font-headline"><ListTodo className="text-accent"/>Tasks to Do</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {tasksToDo.length > 0 ? (
-              tasksToDo.map(task => (
-                <div key={task.id} className="p-3 rounded-md bg-background">
-                  <h4 className="font-semibold">{task.title}</h4>
-                  <p className="text-sm text-muted-foreground">{task.description}</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="md:col-span-2 space-y-8">
+            <Card>
+              <CardHeader className="flex flex-row items-center gap-4">
+                <Avatar className="w-20 h-20">
+                  <AvatarImage src={profileImage || undefined} alt="Volunteer" />
+                  <AvatarFallback>
+                    <UserCircle className="w-20 h-20 text-muted-foreground" />
+                  </AvatarFallback>
+                </Avatar>
+                <div>
+                  <CardTitle className="font-headline text-3xl">Welcome, {hardcodedCredentials.name}!</CardTitle>
+                  <CardDescription>Role: {hardcodedCredentials.role}</CardDescription>
+                  <Input type="file" id="photo-upload" className="hidden" accept="image/*" onChange={handleImageUpload} />
+                  <Button asChild variant="outline" size="sm" className="mt-2">
+                    <label htmlFor="photo-upload" className="cursor-pointer">
+                      <Upload className="mr-2 h-4 w-4" />
+                      Upload Photo
+                    </label>
+                  </Button>
                 </div>
-              ))
-            ) : (
-              <p className="text-muted-foreground">No pending tasks. Great job!</p>
-            )}
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-3 font-headline"><CheckCircle2 className="text-primary"/>Completed Tasks</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {completedTasks.length > 0 ? (
-              completedTasks.map(task => (
-                <div key={task.id} className="p-3 rounded-md bg-background">
-                  <h4 className="font-semibold">{task.title}</h4>
-                  <p className="text-sm text-muted-foreground">{task.description}</p>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="font-semibold">Here are some resources for you:</p>
+                <ul className="space-y-2">
+                  <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Volunteer Handbook</a></li>
+                  <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Upcoming Events Schedule</a></li>
+                  <li><a href="#" className="flex items-center gap-2 text-primary hover:underline"><FileText size={16} /> Contact List</a></li>
+                  <li><a href="/certificate.pdf" className="flex items-center gap-2 text-primary hover:underline" download><Award size={16} /> Certificate of Registration</a></li>
+                </ul>
+                <Button onClick={onLogout} variant="outline" className="mt-4">
+                  <LogOut className="mr-2 h-4 w-4"/> Log Out
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="space-y-8">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 font-headline text-2xl">
+                   <Wallet className="text-primary" />
+                   My Wallet
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="p-4 rounded-lg bg-secondary">
+                  <p className="text-sm text-muted-foreground">Available Balance</p>
+                  <p className="text-3xl font-bold">$550.00</p>
                 </div>
-              ))
-            ) : (
-              <p className="text-muted-foreground">No tasks completed yet.</p>
-            )}
-          </CardContent>
-        </Card>
+                <div className="text-sm text-muted-foreground space-y-1">
+                  <p>Last Withdrawal: $200.00 on July 15, 2024</p>
+                  <p>Today's Date: {currentDate}</p>
+                </div>
+                 <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M7.483 3.006a.997.997 0 0 0-.977.837l-1.004 5.333H7.83c.483 0 .88.35.955.82a.96.96 0 0 1-.363.856l-2.75 2.05a.993.993 0 0 0-.41.815l.152 4.161c.04.992.887 1.765 1.884 1.765h.302a.996.996 0 0 0 .978-.836l1.003-5.334h-2.328a.965.965 0 0 1-.956-.82.965.965 0 0 1 .363-.855l2.75-2.052a.993.993 0 0 0 .41-.815L9.308 3.843a.997.997 0 0 0-.978-.837h-.847zm8.396.002a.998.998 0 0 0-.978.837l-1.507 8.005a.964.964 0 0 1-.955.82h-2.92a.997.997 0 0 0-.977.836l-.37 1.966a.998.998 0 0 0 .977.837h.847a.998.998 0 0 0 .978-.837l1.508-8.005a.964.964 0 0 1 .955-.82h2.92a.997.997 0 0 0 .977-.837l.37-1.965a.998.998 0 0 0-.977-1.163h-.848z" /></svg>
+                    Connect with PayPal
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-3 font-headline"><ListTodo className="text-accent"/>Tasks to Do</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {tasksToDo.length > 0 ? (
+                tasksToDo.map(task => (
+                  <div key={task.id} className="p-3 rounded-md bg-background">
+                    <h4 className="font-semibold">{task.title}</h4>
+                    <p className="text-sm text-muted-foreground">{task.description}</p>
+                  </div>
+                ))
+              ) : (
+                <p className="text-muted-foreground">No pending tasks. Great job!</p>
+              )}
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-3 font-headline"><CheckCircle2 className="text-primary"/>Completed Tasks</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {completedTasks.length > 0 ? (
+                completedTasks.map(task => (
+                  <div key={task.id} className="p-3 rounded-md bg-background">
+                    <h4 className="font-semibold">{task.title}</h4>
+                    <p className="text-sm text-muted-foreground">{task.description}</p>
+                  </div>
+                ))
+              ) : (
+                <p className="text-muted-foreground">No tasks completed yet.</p>
+              )}
+            </CardContent>
+          </Card>
+        </div>
       </div>
     );
   }
