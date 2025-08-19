@@ -42,11 +42,19 @@ export function Footer() {
 
         <div>
           <h3 className="mb-4 text-sm font-semibold tracking-wider uppercase font-headline">Official Info</h3>
-          <div className="text-sm text-primary-foreground/80">
-            <p>SIREN: {officialInfo.siren}</p>
-            <p>SIRET: {officialInfo.siret}</p>
-            <p>RNA: {officialInfo.rna}</p>
-          </div>
+          <Link
+            href="https://annuaire-entreprises.data.gouv.fr/entreprise/excelles-smart-kids-cameroun-904433190"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block text-sm text-primary-foreground/80 hover:text-white hover:underline"
+          >
+            <div>
+              <p>SIREN: {officialInfo.siren}</p>
+              <p>SIRET: {officialInfo.siret}</p>
+              <p>RNA: {officialInfo.rna}</p>
+              <p className="mt-2 text-xs">(View on official directory)</p>
+            </div>
+          </Link>
         </div>
       </div>
       <div className="container px-4 mx-auto mt-8 text-center text-primary-foreground/60">
