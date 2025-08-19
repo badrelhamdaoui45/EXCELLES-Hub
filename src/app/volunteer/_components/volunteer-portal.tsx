@@ -158,9 +158,9 @@ export function VolunteerPortal() {
                   <p>Last Withdrawal: $200.00 on July 15, 2024</p>
                   <p>Today's Date: {currentDate}</p>
                 </div>
-                 <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M7.483 3.006a.997.997 0 0 0-.977.837l-1.004 5.333H7.83c.483 0 .88.35.955.82a.96.96 0 0 1-.363.856l-2.75 2.05a.993.993 0 0 0-.41.815l.152 4.161c.04.992.887 1.765 1.884 1.765h.302a.996.996 0 0 0 .978-.836l1.003-5.334h-2.328a.965.965 0 0 1-.956-.82.965.965 0 0 1 .363-.855l2.75-2.052a.993.993 0 0 0 .41-.815L9.308 3.843a.997.997 0 0 0-.978-.837h-.847zm8.396.002a.998.998 0 0 0-.978.837l-1.507 8.005a.964.964 0 0 1-.955.82h-2.92a.997.997 0 0 0-.977.836l-.37 1.966a.998.998 0 0 0 .977.837h.847a.998.998 0 0 0 .978-.837l1.508-8.005a.964.964 0 0 1 .955-.82h2.92a.997.997 0 0 0 .977-.837l.37-1.965a.998.998 0 0 0-.977-1.163h-.848z" /></svg>
-                    Connect with PayPal
+                 <Button className="w-full bg-green-600 hover:bg-green-700 text-white" disabled>
+                    <CheckCircle2 className="mr-2 h-4 w-4" />
+                    PayPal Connected
                 </Button>
               </CardContent>
             </Card>
