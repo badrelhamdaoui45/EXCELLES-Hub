@@ -63,7 +63,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Building Sustainable Futures Through Modern Farming',
     excerpt: 'We are introducing new, sustainable farming techniques to our agricultural program, including drip irrigation...',
     content: 'Sustainability is at the core of our mission. This quarter, we have invested in drip irrigation and organic composting systems for our community farm. These new technologies will help us conserve water, improve soil health, and increase crop yields. We are excited to train our youth in these modern techniques, preparing them for a future in sustainable agriculture.',
-    imageUrl: 'https://images.unsplash.com/photo-1720420419622-5f1a528a8bd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjYW1lcm91biUyMGtpZHMlMjByZWFkaW5nfGVufDB8fHx8MTc1NTU1OTAzOHww&ixlib=rb-4.1.0&q=80&w=1080',
+    imageUrl: 'https://images.unsplash.com/photo-1720420419622-5f1a528a8bd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjYW1lcm9unUyMGtpZHMlMjByZWFkaW5nfGVufDB8fHx8MTc1NTU1OTAzOHww&ixlib=rb-4.1.0&q=80&w=1080',
     imageHint: 'drip irrigation system',
     author: 'Admin',
     date: 'May 18, 2024',
