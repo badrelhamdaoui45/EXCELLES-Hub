@@ -32,7 +32,7 @@ const loginSchema = z.object({
 const hardcodedCredentials = {
   email: 'contact@execelles.com',
   password: 'Bad202?!@',
-  name: 'Valued Volunteer',
+  name: 'Alex Girardot',
   role: 'Community Ambassador'
 };
 
