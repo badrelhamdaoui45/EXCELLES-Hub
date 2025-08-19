@@ -72,7 +72,7 @@ export function DocumentLibrary({ publicDocs, privateDocs }: { publicDocs: Docum
             <ul className="space-y-2">
               {privateDocs.map((doc) => (
                 <li key={doc.name}>
-                  <a href={doc.url} className="flex items-center gap-2 text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                  <a href={doc.url} className="flex items-center gap-2 text-primary hover:underline" download>
                     {doc.name}
                   </a>
                 </li>
