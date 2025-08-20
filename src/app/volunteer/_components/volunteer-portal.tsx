@@ -117,6 +117,7 @@ export function VolunteerPortal() {
                 </Avatar>
                 <div>
                   <CardTitle className="font-headline text-3xl">Welcome, {hardcodedCredentials.name}!</CardTitle>
+                  <CardDescription>{hardcodedCredentials.email}</CardDescription>
                   <CardDescription>Role: {hardcodedCredentials.role}</CardDescription>
                   <Input type="file" id="photo-upload" className="hidden" accept="image/*" onChange={handleImageUpload} />
                   <Button asChild variant="outline" size="sm" className="mt-2">
