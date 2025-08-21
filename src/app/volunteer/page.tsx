@@ -1,5 +1,12 @@
 import { VolunteerPortal } from "./_components/volunteer-portal";
-import { Users } from 'lucide-react';
+import { Users, Award, UserCheck, HeartHandshake } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+const volunteers = [
+  { name: 'Chantal Biya', role: 'Community Outreach Coordinator' },
+  { name: 'Roger Milla', role: 'Workshop Facilitator' },
+  { name: 'Manu Dibango', role: 'Fundraising Assistant' },
+]
 
 export default function VolunteerPage() {
   return (
@@ -26,6 +33,21 @@ export default function VolunteerPage() {
             <p className="text-lg text-muted-foreground">
               Our association is proud to have 3 dedicated volunteers who are the heart of our organization. Their dedication, skills, and passion are the driving force behind our success. We are immensely grateful for their commitment to empowering the youth of Cameroon.
             </p>
+          </div>
+           <div className="grid grid-cols-1 gap-8 mt-12 md:grid-cols-3">
+            {volunteers.map((volunteer) => (
+              <Card key={volunteer.name} className="text-center">
+                <CardHeader>
+                  <div className="flex justify-center mb-4">
+                     <Award className="w-10 h-10 text-accent" />
+                  </div>
+                  <CardTitle className="font-headline text-xl">{volunteer.name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="font-semibold text-primary">{volunteer.role}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
