@@ -92,7 +92,7 @@ export default function AboutPage() {
           <h2 className="mb-6 text-3xl md:text-4xl font-headline">Our Volunteers</h2>
           <div className="max-w-3xl mx-auto">
             <p className="text-lg text-muted-foreground">
-              Our volunteers are the heart of our organization. Their dedication, skills, and passion are the driving force behind our success. We are immensely grateful for their commitment to empowering the youth of Cameroon.
+             Our association is proud to have 3 dedicated volunteers who are the heart of our organization. Their dedication, skills, and passion are the driving force behind our success. We are immensely grateful for their commitment to empowering the youth of Cameroon.
             </p>
           </div>
           <Button asChild size="lg" className="mt-8 bg-accent hover:bg-accent/90 text-accent-foreground">
