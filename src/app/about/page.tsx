@@ -1,7 +1,9 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { teamMembers, officialInfo } from '@/lib/data';
 import { Sparkles, Users, ShieldCheck } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function AboutPage() {
   return (
@@ -85,7 +87,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="pb-16 md:pb-24">
+      <section className="py-16 bg-secondary md:py-24">
+        <div className="container px-4 mx-auto text-center">
+          <h2 className="mb-6 text-3xl md:text-4xl font-headline">Our Volunteers</h2>
+          <div className="max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground">
+              Our volunteers are the heart of our organization. Their dedication, skills, and passion are the driving force behind our success. We are immensely grateful for their commitment to empowering the youth of Cameroon.
+            </p>
+          </div>
+          <Button asChild size="lg" className="mt-8 bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Link href="/volunteer">Join Our Team</Link>
+          </Button>
+        </div>
+      </section>
+
+      <section className="py-16 md:pb-24">
         <div className="container px-4 mx-auto">
            <h2 className="mb-8 text-3xl text-center md:text-4xl font-headline">Official Information</h2>
           <Card className="max-w-2xl p-6 mx-auto">
