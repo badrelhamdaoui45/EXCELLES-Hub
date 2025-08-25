@@ -44,7 +44,7 @@ export default function AboutPage() {
               <CardContent>
                 <p className="text-muted-foreground">Fostering a sense of belonging and collaboration to build a stronger society.</p>
               </CardContent>
-            </card>
+            </Card>
             <Card className="text-center">
               <CardHeader>
                 <div className="flex justify-center mb-4">
