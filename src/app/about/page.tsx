@@ -21,8 +21,8 @@ export default function AboutPage() {
             </div>
             <div className="flex justify-center">
                 <Image
-                    src="https://placehold.co/600x400.png"
-                    alt="Our Story placeholder"
+                    src="/AD.png"
+                    alt="Our Story"
                     width={500}
                     height={500}
                     className="object-cover rounded-lg shadow-lg"
