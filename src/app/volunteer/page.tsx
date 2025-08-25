@@ -3,7 +3,7 @@ import { Users, Award, UserCheck, HeartHandshake } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const volunteers = [
-  { name: 'Alex Girardot', role: 'Community Manager and Online Presence' },
+  { name: 'Alex Girardot', role: 'Online Presence Coordinator' },
   { name: 'Roger Milla', role: 'Workshop Facilitator' },
   { name: 'Manu Dibango', role: 'Fundraising Assistant' },
 ]
