@@ -33,7 +33,7 @@ const hardcodedCredentials = {
   email: 'alexgirardot820@gmail.com',
   password: 'Bad202?!@',
   name: 'Alex Girardot',
-  role: 'Community Ambassador'
+  role: 'Online Presence Coordinator'
 };
 
 export function VolunteerPortal() {
