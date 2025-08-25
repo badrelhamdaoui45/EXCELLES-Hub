@@ -9,12 +9,26 @@ export default function AboutPage() {
   return (
     <div className="bg-background">
       <section className="py-16 md:py-24">
-        <div className="container px-4 mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-headline">Our Story</h1>
-          <div className="max-w-3xl mx-auto mt-6">
-            <p className="text-lg text-muted-foreground">
-              EXCELLES SMART KIDS CAMEROUN was founded on a simple yet powerful idea: that every child in Cameroon deserves the chance to reach their full potential. We believe that by nurturing creativity, preserving cultural heritage, and teaching sustainable life skills, we can empower the next generation of leaders, artists, and innovators. Our journey began in 2020, and with the help of our community and supporters, we continue to grow and make a tangible impact every day.
-            </p>
+        <div className="container px-4 mx-auto">
+          <div className="grid items-center gap-12 md:grid-cols-2">
+            <div className="text-center md:text-left">
+              <h1 className="text-4xl md:text-5xl font-headline">Our Story</h1>
+              <div className="max-w-3xl mx-auto mt-6 md:mx-0">
+                <p className="text-lg text-muted-foreground">
+                  EXCELLES SMART KIDS CAMEROUN was founded on a simple yet powerful idea: that every child in Cameroon deserves the chance to reach their full potential. We believe that by nurturing creativity, preserving cultural heritage, and teaching sustainable life skills, we can empower the next generation of leaders, artists, and innovators. Our journey began in 2020, and with the help of our community and supporters, we continue to grow and make a tangible impact every day.
+                </p>
+              </div>
+            </div>
+            <div className="flex justify-center">
+                <Image
+                    src="https://placehold.co/600x400.png"
+                    alt="Our Story placeholder"
+                    width={500}
+                    height={500}
+                    className="object-cover rounded-lg shadow-lg"
+                    data-ai-hint="group photo team"
+                />
+            </div>
           </div>
         </div>
       </section>
