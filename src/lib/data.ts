@@ -2,7 +2,7 @@ import type { BlogPost, TeamMember, Document, VolunteerTask } from './types';
 
 export const teamMembers: TeamMember[] = [
   {
-    name: 'Marc Bescond',
+    name: 'Mme Fosto Patricia',
     role: 'Founder & President',
     bio: 'With a PhD in Education and a passion for youth development, Dr. Kouassi founded EXCELLES to create lasting change in her home country.',
     imageUrl: '/as1.jpg',
