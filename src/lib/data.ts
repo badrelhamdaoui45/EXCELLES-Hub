@@ -4,14 +4,14 @@ export const teamMembers: TeamMember[] = [
   {
     name: 'Mme Fosto Patricia',
     role: 'Founder & President',
-    bio: 'With a PhD in Education and a passion for youth development, Dr. Kouassi founded EXCELLES to create lasting change in her home country.',
+    bio: 'With a PhD in Education and a passion for youth development, Dr. Fosto founded EXCELLES to create lasting change in her home country.',
     imageUrl: '/as1.jpg',
     imageHint: 'professional woman smiling',
   },
   {
-    name: 'Jean-Pierre Nkomo',
+    name: 'Mr Kenfack Momo Levy Donald',
     role: 'Director of Operations',
-    bio: 'Jean-Pierre manages the day-to-day activities of our programs, ensuring everything runs smoothly and efficiently.',
+    bio: 'Kenfack manages the day-to-day activities of our programs, ensuring everything runs smoothly and efficiently.',
     imageUrl: '/as2.jpg',
     imageHint: 'professional man portrait',
   },
