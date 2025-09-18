@@ -26,7 +26,7 @@ export default function RootLayout({
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'AW-17542032820');
+  gtag('config', 'AW-17542032820');  
 </script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
