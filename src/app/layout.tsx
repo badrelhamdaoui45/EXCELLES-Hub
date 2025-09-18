@@ -18,6 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Event snippet for Page view conversion page */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          gtag('event', 'conversion', {'send_to': 'AW-17542032820/dGltCKy8lp0bELTb2KxB'});
+        `}} />
+
         {/* Google tag (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17542032820"></script>
         <script dangerouslySetInnerHTML={{ __html: `
